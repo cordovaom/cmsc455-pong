@@ -18,6 +18,6 @@ def page_not_found(e):
 def internal_server_error(e):
     return jsonify({'message': 'Servier Error'}), 500
 
-@app.route('/user', methods=['GET'])
+@app.route('/pong', methods=['GET'])
 def pong():
     return jsonify({'message': 'Server has ponged'}), 200
