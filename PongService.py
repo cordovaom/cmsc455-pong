@@ -14,6 +14,12 @@ app.config['SECRET_KEY'] = 'secret key here'
 auth = HTTPDigestAuth()
 
 users={"vcu": "rams"}
+
+@auth.get_password
+def get_password(username):
+    if username in users:
+        return users.get(username)
+    return None
     
 @app.errorhandler(404)
 def page_not_found(e):
