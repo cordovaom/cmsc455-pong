@@ -32,4 +32,4 @@ def internal_server_error(e):
 @app.route('/pong', methods=['GET'])
 @auth.login_required
 def pong():
-    return jsonify({'message': 'Server has ponged'}), 200
+    return "Server has ponged", 200
