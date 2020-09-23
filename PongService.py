@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] =\
     'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'secret key here'
+app.config['SECRET_KEY'] = 'secret key'
 
 auth = HTTPDigestAuth()
 
@@ -32,4 +32,4 @@ def internal_server_error(e):
 @app.route('/pong', methods=['GET'])
 @auth.login_required
 def pong():
-    return "Server has ponged", 200
+    return jsonify("Server has ponged"), 200
